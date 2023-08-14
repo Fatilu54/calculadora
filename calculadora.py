@@ -1,12 +1,9 @@
 import math
 import os
-
-#Funciones de las operaciones basicas de una calculadora. Suma, resta, multiplicación, división, potenciacion, radicación, porcetaje y operaciones con parentesis.
-
+#Funciones de las operaciones basicas de una calculadora. Suma, resta, multiplicación, división, potenciacion, radicación y porcetaje.
 def suma(a, b):
     os.system("cls")
     return a + b
-
 
 
 def resta(a, b):
@@ -14,11 +11,9 @@ def resta(a, b):
     return a - b
 
 
-
 def multiplicacion(a, b):
     os.system("cls")
     return a * b
-
 
 
 def division(a, b):
@@ -29,11 +24,9 @@ def division(a, b):
         raise ValueError("Division por cero")
 
 
-
 def potencia(a, b):
     os.system("cls")
     return a ** b
-
 
 
 def radicacion(a):
@@ -44,23 +37,9 @@ def radicacion(a):
         raise ValueError("No se puede calcular la raiz cuadrada de un número negativo")
 
 
-
 def porcentaje(numero, porcentaje):
     os.system("cls")
     return (numero * porcentaje) / 100
-
-
-
-def operaciones_con_parentesis(expresion):
-    os.system("cls")
-    try:
-        return eval(expresion)
-    except Exception:
-        print("Entrada inválida. Por favor, ingrese un numero valido.")
-
-
-
-#Este menú es para que sea un poco más sencillo para hacer las operaciones.
 
 def menu():
     print("Hola!! Bienvenido a la calculadora :)")
@@ -73,19 +52,18 @@ def menu():
     print("5. Potencia")
     print("6. Raíz Cuadrada")
     print("7. Porcentaje")
-    print("8. Operaciones con paréntesis")
-    print("9. Salir")
+    print("8. Salir")
 
 def main():
     while True:
         menu()
         opcion = int(input("Selecciona una operación (1-9): "))
         
-        if opcion == 9:
+        if opcion == 8:
             print("Gracias por usar la calculadora. Nos vemos luego UwU")
             break
         
-        if opcion < 1 or opcion > 9:
+        if opcion < 1 or opcion > 8:
             os.system("cls")
             print("Opción inválida. Por favor, eliga una opción que se muestre en el menú.")
             continue
@@ -124,11 +102,6 @@ def main():
                 print("Resultado:", porcentaje(num, porc))
             except ValueError:
                 print("Entrada inválida. Por favor, ingrese un numero valido.")
-        
-        elif opcion == 8:
-            expresion = input("Ingresa una operación con paréntesis")
-            print("Resultado:", operaciones_con_parentesis(expresion))
-    
         
 if __name__ == "__main__":
     main()
